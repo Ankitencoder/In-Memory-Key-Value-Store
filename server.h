@@ -5,9 +5,11 @@
 
 class Server {
 private:
+    int port;
     KeyValueStore store;
 
 public:
+    Server(int port);
     void start();
 };
 
