@@ -1,34 +1,27 @@
-In-Memory Key-Value Store (C++)
+# Redis-Inspired In-Memory Key-Value Store (C++)
 
-A high-performance in-memory key-value database inspired by Redis.
+## 🚀 Overview
+A high-performance in-memory key-value store inspired by Redis, designed for low-latency operations and durability using append-only persistence.
 
-## 🚀 Features
+## ⚙️ Features
 - O(1) average read/write using hash map
-- Thread-safe operations (mutex locking)
-- Append-only file persistence (AOF)
-- Modular architecture (parser, server, storage)
-- Basic CLI command system
+- Thread-safe with shared_mutex
+- Append-Only File (AOF) persistence
+- Command parser (SET, GET, DEL)
+- Benchmarking tool
 
-## 🧠 Architecture
-Client Input → Parser → Command Handler → Store → Persistence
+## 🧠 Design Decisions
+- Read-heavy optimization using shared locks
+- Write durability via AOF
+- Trade-off: Slight write latency for persistence
 
-## 📌 Commands
-SET key value  
-GET key  
-EXIT  
+## 📊 Benchmark
+100k writes: ~X ms (depends on system)
 
-## 🧪 Testing
-g++ tests/test_store.cpp src/store.cpp -o test  
-./test  
+## 🛠 Run
+make
+./kvstore
 
-## ⚡ Future Improvements
-- TCP server (networked Redis clone)
-- LRU eviction policy
-- Snapshotting (RDB)
-- Replication
-
-
-kv-store-cpp/
 ├── src/
 │   ├── main.cpp
 │   ├── server.cpp
