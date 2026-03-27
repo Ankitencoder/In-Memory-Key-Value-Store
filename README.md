@@ -27,6 +27,24 @@ g++ tests/test_store.cpp src/store.cpp -o test
 - Snapshotting (RDB)
 - Replication
 
-## 👨‍💻 Author
-Ankit Ghosh  
-GitHub: https://github.com/Ankitencoder
+
+kv-store-cpp/
+├── src/
+│   ├── main.cpp
+│   ├── server.cpp
+│   ├── store.cpp
+│   ├── persistence.cpp
+│   ├── parser.cpp
+│   └── benchmark.cpp
+├── include/
+│   ├── server.h
+│   ├── store.h
+│   ├── persistence.h
+│   ├── parser.h
+├── data/
+│   └── appendonly.aof
+├── Makefile
+└── README.md
+
+
+
