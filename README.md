@@ -1,4 +1,4 @@
-# Redis-like In-Memory Key-Value Store (C++)
+In-Memory Key-Value Store (C++)
 
 A high-performance in-memory key-value database inspired by Redis.
 
